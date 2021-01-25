@@ -78,9 +78,6 @@ document.getElementById("AddCourse").addEventListener('click', event => {
     }
 })
 let coursesArrFetch = JSON.parse(localStorage.getItem('coursesArr') || '[]');
-
-
-
 for (let i = 0; i < coursesArrFetch.length; i++) {
     courseId = coursesArrFetch[i].courseId
     img = coursesArrFetch[i].courseImg;
@@ -97,6 +94,7 @@ for (let i = 0; i < coursesArrFetch.length; i++) {
                         </div>
                     </div>`
 }
+// insert a course here
 
 let assignCourse = (courseId) => {
     for (let i = 0; i < userArr.length; i++) {
@@ -119,22 +117,14 @@ for (let i = 0; i < coursesArrFetch.length; i++) {
                                 </tr>`
 }
 function RemoveCourse(courseId) {
-
     for (let i = 0; i < coursesArrFetch.length; i++) {
-
         if (coursesArrFetch[i].courseId === courseId) {
-
             coursesArrFetch.splice(i, 1);
             console.log(coursesArrFetch);
             localStorage.setItem('coursesArr', JSON.stringify(coursesArrFetch))
             location.reload(true);
         }
-
-
-
     }
-
-
 }
 
 function sendDataToStudent(courseId, userEmail) {
@@ -147,16 +137,11 @@ function sendDataToStudent(courseId, userEmail) {
             }
         })
     } else {
-        userArr.forEach((user)=>{
-            
+        userArr.forEach((user)=>{       
             if(userEmail===user.email){
                 user.courses.splice(courseId-1,1)
-                
                 localStorage.setItem('userArr', JSON.stringify(userArr))
-                
             }
         })
     }
-
-
 }
