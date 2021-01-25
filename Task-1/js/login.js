@@ -30,11 +30,11 @@ function Login() {
 
                 if (i.role === 'admin') {
                     localStorage.setItem('currentAdmin', email.value)
-                    window.location.href = "adminHome.html";
+                    window.location.href = "admin.html";
                 } else {
                     localStorage.setItem('currentUser', email.value)
 
-                    window.location.href = "studentHome.html";
+                    window.location.href = "user.html";
                 }
                 flag = true;
                 break;

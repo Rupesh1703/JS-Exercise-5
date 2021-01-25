@@ -17,20 +17,23 @@ let studentForAssign = '';
 
 if (!localStorage.getItem('currentAdmin')) {
     window.location.href = '../src/login.html';
-} else {
+}
+ else 
+ {
     for (let i = 0; i < userArr.length; i++) {
-        if (currentUser === userArr[i].email) {
-            if (userArr[i].role === "admin") {
-                
-            } else {
+        if (currentUser === userArr[i].email)
+         {
+            if (userArr[i].role === "admin") 
+            {
+            console.log("rrrrr")    
+            }
+             else 
+            {
                 window.location.href = '../src/login.html';
             }
         }
     }
 }
-
-
-
 logout = () => {
     let confirmBtn = confirm("Are u sure want to logout?")
     if (confirmBtn == true) {
@@ -74,7 +77,7 @@ document.getElementById("AddCourse").addEventListener('click', event => {
         console.log(objOfCourse);
 
         localStorage.setItem('coursesArr', JSON.stringify(coursesArr));
-        window.location.href = "../src/adminHome.html";
+        window.location.href = "../src/admin.html";
     }
 })
 let coursesArrFetch = JSON.parse(localStorage.getItem('coursesArr') || '[]');
